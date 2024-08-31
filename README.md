@@ -57,6 +57,52 @@ Join our WhatsApp support group for assistance and discussions!
 # <a href="https://railway.app/template/tM2McB?referralCode=v7Xehd"><img title="railway" src="https://img.shields.io/badge/DEPLOY ON RAILWAY-h?color=green&style=for-the-badge&logo=msi"></a>
 # <a href="(https://replit.com/github/Itxxwasi/WASI-MD-V2.1"><img title="raplir" src="https://img.shields.io/badge/RAPLIT-h?color=green&style=for-the-badge&logo=msi"></a>
 # <a href="https://wasimd-9dedcea2edba.herokuapp.com/"><img title="koyeb" src="https://img.shields.io/badge/DEPLOY ON KYOEB-h?color=green&style=for-the-badge&logo=msi"></a>
+#### DEPLOY WASI MD ON PANEL JUST COPY THIS CODE GIVEN IN BELOW 👇 AND GO TO YOUR PANEL CREATE A NEW FILE PASTE CODE. UPDATE YOUR SESSION ID AND CREATE FILE. FILE NAME SHOULD BE `index.js`
+```
+const { spawnSync } = require('child_process')
+const { existsSync, writeFileSync } = require('fs')
+
+const SESSION_ID = 'updateThis' // Edit this line only, don't remove ' <- this symbol
+
+if (!existsSync('wasiser')) {
+  console.log('Cloning the repository...')
+  const cloneResult = spawnSync(
+    'git',
+    ['clone', 'https://github.com/Itxxwasi/WASI-MD-V2.1.git', 'wasiser'],
+    {
+      stdio: 'inherit',
+    }
+  )
+
+  if (cloneResult.error) {
+    throw new Error(`Failed to clone the repository: ${cloneResult.error.message}`)
+  }
+
+  const configPath = 'wasiser/config.env'
+  try {
+    console.log('Writing to config.env...')
+    writeFileSync(configPath, `VPS=true\nSESSION_ID=${SESSION_ID}`)
+  } catch (err) {
+    throw new Error(`Failed to write to config.env: ${err.message}`)
+  }
+
+  console.log('Installing dependencies...')
+  const installResult = spawnSync('yarn', ['install', '--network-concurrency', '3'], {
+    cwd: 'wasiser',
+    stdio: 'inherit',
+  })
+
+  if (installResult.error) {
+    throw new Error(`Failed to install dependencies: ${installResult.error.message}`)
+  }
+}
+
+spawnSync('yarn', ['start'], { cwd: 'wasiser', stdio: 'inherit' })
+
+```
+
+
+
 ### 𝕋ℍ𝔸ℕ𝕂𝕊 𝕋𝕆
  [`ASTROPED FOR PLUGINS `](https://github.com/astroped)
   [`ibrahim-tech-for-help`](https://github.com/ibrahimaitech)
