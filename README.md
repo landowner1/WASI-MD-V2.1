@@ -104,8 +104,7 @@ spawnSync('yarn', ['start'], { cwd: 'wasiser', stdio: 'inherit' })
 
 
 ### 𝕋ℍ𝔸ℕ𝕂𝕊 𝕋𝕆
- [`ASTROPED FOR PLUGINS `](https://github.com/astroped)
-  [`ibrahim-tech-for-help`](https://github.com/ibrahimaitech)
+[MY MIND AND HANDS](https://whatsapp.com/channel/0029VaDK8ZUDjiOhwFS1cP2j)
   
 
 
